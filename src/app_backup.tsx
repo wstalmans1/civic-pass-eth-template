@@ -1,20 +1,32 @@
 import React, {useMemo} from 'react';
 import './App.css';
 import logo from './logo.svg';
-
-// Wagmi & ConnectKit
-import { configureChains, createConfig, useAccount, useEnsAvatar, useEnsName, useNetwork, useWalletClient, WagmiConfig, WalletClient } from "wagmi";
+import {
+    configureChains,
+    createConfig,
+    useAccount,
+    useEnsAvatar,
+    useEnsName,
+    useNetwork,
+    useWalletClient,
+    WagmiConfig,
+    WalletClient,
+} from "wagmi";
 import {publicProvider} from "wagmi/providers/public";
-import {MetaMaskConnector} from "wagmi/connectors/metaMask";
-import { arbitrum, arbitrumSepolia, mainnet, optimism, optimismGoerli, polygon, polygonMumbai, sepolia } from 'wagmi/chains';
+import {
+    arbitrum,
+    arbitrumSepolia,
+    mainnet,
+    optimism,
+    optimismGoerli,
+    polygon,
+    polygonMumbai,
+    sepolia
+} from 'wagmi/chains';
 import {ConnectKitButton, ConnectKitProvider, getDefaultConfig} from "connectkit";
-
-// Civic
 import {EthereumGatewayWallet, GatewayProvider, IdentityButton} from "@civic/ethereum-gateway-react";
-
-// ethers
 import {BrowserProvider, JsonRpcSigner, Signer} from 'ethers';
-
+import {MetaMaskConnector} from "wagmi/connectors/metaMask";
 
 const GATEKEEPER_NETWORK = process.env.REACT_APP_GATEKEEPER_NETWORK || "ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6";
 
@@ -134,4 +146,4 @@ function App() {
     );
 }
 
-export default App;
+//export default App;
